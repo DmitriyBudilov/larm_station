@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block styles %}
     {% endblock %}
-    
-    <title>Document</title>
+    {% if title %}
+            <title>{{ title }}</title>
+    {% else %}
+            <title>LARM</title>
+    {% endif %}
 </head>
 <body>
     {% block menu %}
@@ -15,6 +18,7 @@
     <a href="#">Monitor</a>
     <a href="#">Data</a>
     <a href="#">Config</a>
+    <a href="{{ url_for('login') }}">Login</a>
     {% endblock %}
     <hr>   
     {% block content %}
